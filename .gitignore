@@ -1,0 +1,7 @@
+node_modules/
+*.vsix
+work/
+test/
+.vscode/
+preview-*.png
+validation.json

@@ -1,0 +1,251 @@
+{
+  "name": "po-team-live",
+  "displayName": "PO Team Live",
+  "description": "Team AI làm game Unity: CEO giao mục tiêu cho PO, PO chia việc linh hoạt theo project và báo cáo kết quả trong Office 3D.",
+  "version": "0.9.2",
+  "publisher": "inwave",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "agents",
+    "po",
+    "opus",
+    "sonnet",
+    "codex",
+    "visualization"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "poTeam",
+          "title": "PO Team",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "poTeam": [
+        {
+          "id": "poTeam.runs",
+          "name": "Session trong project"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "poTeam.runs",
+        "contents": "Kết nối proxy và chọn model điều phối để phân tích project, đề xuất team và chia việc.\n[Mở giao diện](command:poTeam.openView)\n[▶ Chạy demo](command:poTeam.runDemo)"
+      }
+    ],
+    "commands": [
+      {
+        "command": "poTeam.connectUnityMcp",
+        "title": "PO Team: Kết nối Unity MCP"
+      },
+      {
+        "command": "poTeam.manageToolbox",
+        "title": "PO Team: Toolbox skill / plugin / MCP từ Codex & Claude"
+      },
+      {
+        "command": "poTeam.configureMcp",
+        "title": "PO Team: Kết nối công cụ MCP (Unity / PC / Research)"
+      },
+      {
+        "command": "poTeam.generateImage",
+        "title": "PO Team: Tạo ảnh"
+      },
+      {
+        "command": "poTeam.pauseTeam",
+        "title": "PO Team: Tạm dừng session"
+      },
+      {
+        "command": "poTeam.resumeTeam",
+        "title": "PO Team: Tiếp tục session"
+      },
+      {
+        "command": "poTeam.newSession",
+        "title": "PO Team: Tạo session mới",
+        "icon": "$(add)"
+      },
+      {
+        "command": "poTeam.renameSession",
+        "title": "PO Team: Đổi tên session"
+      },
+      {
+        "command": "poTeam.connectProxy",
+        "title": "PO Team: Kết nối proxy"
+      },
+      {
+        "command": "poTeam.scanModels",
+        "title": "PO Team: Quét model từ proxy"
+      },
+      {
+        "command": "poTeam.startTeam",
+        "title": "PO Team: Phân tích & lên plan"
+      },
+      {
+        "command": "poTeam.addWork",
+        "title": "PO Team: Giao thêm task / thêm vị trí"
+      },
+      {
+        "command": "poTeam.openReport",
+        "title": "PO Team: Mở báo cáo kết quả"
+      },
+      {
+        "command": "poTeam.stopTeam",
+        "title": "PO Team: Dừng team"
+      },
+      {
+        "command": "poTeam.reviewChanges",
+        "title": "PO Team: Xem thay đổi đề xuất"
+      },
+      {
+        "command": "poTeam.applyChanges",
+        "title": "PO Team: Áp dụng thay đổi đã review"
+      },
+      {
+        "command": "poTeam.openView",
+        "title": "PO Team: Mở giao diện",
+        "icon": "$(layout-panel)"
+      },
+      {
+        "command": "poTeam.runDemo",
+        "title": "PO Team: Chạy demo",
+        "icon": "$(play)"
+      },
+      {
+        "command": "poTeam.refresh",
+        "title": "PO Team: Làm mới",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "poTeam.clearRun",
+        "title": "PO Team: Xóa lượt chạy",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "poTeam.revealEventsDir",
+        "title": "PO Team: Mở thư mục nhật ký",
+        "icon": "$(folder-opened)"
+      },
+      {
+        "command": "poTeam.openFile",
+        "title": "PO Team: Mở file",
+        "enablement": "false"
+      },
+      {
+        "title": "PO Team: Mở log gộp của session",
+        "command": "poTeam.openLog"
+      },
+      {
+        "command": "poTeam.changeModel",
+        "title": "PO Team: Đổi model của vị trí"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "poTeam.newSession",
+          "when": "view == poTeam.runs",
+          "group": "navigation@0"
+        },
+        {
+          "command": "poTeam.openView",
+          "when": "view == poTeam.runs",
+          "group": "navigation@1"
+        },
+        {
+          "command": "poTeam.runDemo",
+          "when": "view == poTeam.runs",
+          "group": "navigation@2"
+        },
+        {
+          "command": "poTeam.refresh",
+          "when": "view == poTeam.runs",
+          "group": "navigation@3"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "poTeam.openView",
+          "when": "view == poTeam.runs && viewItem == run",
+          "group": "inline"
+        },
+        {
+          "command": "poTeam.clearRun",
+          "when": "view == poTeam.runs && viewItem == run",
+          "group": "9_manage"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "poTeam.openFile",
+          "when": "false"
+        },
+        {
+          "command": "poTeam.clearRun",
+          "when": "false"
+        },
+        {
+          "command": "poTeam.changeModel",
+          "when": "false"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "PO Team",
+      "properties": {
+        "poTeam.eventsDir": {
+          "type": "string",
+          "default": "",
+          "description": "Thư mục gốc dữ liệu. Mỗi workspace được tách trong projects/<workspace-id>. Để trống: dùng INWAVE_TEAM_DIR hoặc %LOCALAPPDATA%\\InwaveModelRouter\\teams."
+        },
+        "poTeam.defaultView": {
+          "type": "string",
+          "enum": [
+            "office",
+            "board",
+            "results",
+            "timeline",
+            "graph",
+            "stats",
+            "log"
+          ],
+          "default": "office",
+          "description": "Kiểu hiển thị mặc định khi mở giao diện."
+        },
+        "poTeam.notify": {
+          "type": "boolean",
+          "default": true,
+          "description": "Báo khi một lượt chạy kết thúc hoặc có agent gặp lỗi."
+        },
+        "poTeam.importToolbox": {
+          "type": "boolean",
+          "default": true,
+          "description": "Cho các model dùng skill, plugin skill và MCP đã cài trong Codex, Claude Code và VS Code. MCP chỉ khởi động khi model cần."
+        },
+        "poTeam.autoOpen": {
+          "type": "boolean",
+          "default": false,
+          "description": "Tự mở giao diện khi có lượt chạy mới."
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "smol-toml": "1.9.1"
+  }
+}
