@@ -8,7 +8,7 @@ Không mở cổng HTTP và không cần router local chạy. Phần xem nhật 
 
 ## Cài đặt và mở
 
-1. Cài file `po-team-live-0.7.0.vsix` bằng **Extensions: Install from VSIX…**, hoặc `code --install-extension <đường-dẫn-vsix>`. Sau khi nâng cấp, chạy **Developer: Reload Window** để nạp phiên bản mới.
+1. Cài file `po-team-live-0.9.2.vsix` bằng **Extensions: Install from VSIX…**, hoặc `code --install-extension <đường-dẫn-vsix>`. Sau khi nâng cấp, chạy **Developer: Reload Window** để nạp phiên bản mới.
 2. Chạy **PO Team: Mở giao diện** trong Command Palette (`Ctrl+Shift+P`), hoặc chọn biểu tượng PO Team ở Activity Bar.
 3. Chọn session trong danh sách **Session trong project**, hoặc bấm **+ Session mới**. Bấm **Chạy demo** nếu muốn thử trước. Demo chỉ sinh sự kiện mô phỏng, không gọi model.
 4. Bấm tên file để mở trong editor: file đã có mở từ workspace; code đề xuất chưa áp dụng mở thành bản xem chỉ đọc, giữ nguyên nội dung và tô màu cú pháp. Dùng **Xem thay đổi / Áp dụng** để ghi code vào project. Nếu đường dẫn mới chỉ nằm trong plan, extension giải thích rằng chưa có code. Đường dẫn demo mở tài liệu giải thích mô phỏng, không tạo file giả trong project.
