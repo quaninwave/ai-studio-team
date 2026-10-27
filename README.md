@@ -6,6 +6,14 @@ Extension kết nối trực tiếp proxy OpenAI-compatible bằng base URL và 
 
 Không mở cổng HTTP và không cần router local chạy. Phần xem nhật ký cũ và demo dùng được offline, không cần API key. Thư viện 3D được đóng gói sẵn.
 
+## Ảnh demo
+
+![Office 3D](docs/office-3d.png)
+
+![Bảng việc](docs/task-board.png)
+
+![Chat với PO](docs/chat-with-po.png)
+
 ## Cài đặt và mở
 
 1. Cài file `po-team-live-0.9.2.vsix` bằng **Extensions: Install from VSIX…**, hoặc `code --install-extension <đường-dẫn-vsix>`. Sau khi nâng cấp, chạy **Developer: Reload Window** để nạp phiên bản mới.

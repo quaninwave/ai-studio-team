@@ -22,3 +22,4 @@ node_modules/**/*.d.mts
 node_modules/**/*.map
 node_modules/**/*.md
 node_modules/zod/src/**
+docs/**
